@@ -1,0 +1,29 @@
+{
+  "name": "@detonator/gallery",
+  "version": "1.0.4",
+  "description": "Gallery module for Detonator.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iconshot/detonator-gallery.git"
+  },
+  "main": "dist/index.js",
+  "scripts": {
+    "remove-dist": "rm -rf dist",
+    "bundle-dist": "npm run remove-dist && tsc",
+    "build": "npm run bundle-dist",
+    "prepare": "npm run build"
+  },
+  "keywords": [
+    "gallery",
+    "detonator",
+    "untrue"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "detonator": "^1.6.5",
+    "untrue": "^5.15.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  }
+}
