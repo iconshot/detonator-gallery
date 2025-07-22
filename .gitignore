@@ -4,3 +4,6 @@ package-lock.json
 .npmignore
 
 /dist
+
+/android/DetonatorGallery/build/
+/ios/DetonatorGallery/.swiftpm/

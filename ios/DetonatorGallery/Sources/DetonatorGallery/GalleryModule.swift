@@ -1,7 +1,7 @@
 import Detonator
 
 public class GalleryModule: Module {
-    public override func register() -> Void {
+    public override func setUp() -> Void {
         detonator.setRequestClass("com.iconshot.detonator.gallery::requestPermission", GalleryRequestPermissionRequest.self)
         
         detonator.setRequestClass("com.iconshot.detonator.gallery.albumreader::read", GalleryAlbumReaderReadRequest.self)

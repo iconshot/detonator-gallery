@@ -9,7 +9,7 @@ public class GalleryModule extends Module {
     }
 
     @Override
-    public void register() {
+    public void setUp() {
         detonator.setRequestClass("com.iconshot.detonator.gallery::requestPermission", GalleryRequestPermissionRequest.class);
 
         detonator.setRequestClass("com.iconshot.detonator.gallery.albumreader::read", GalleryAlbumReaderReadRequest.class);

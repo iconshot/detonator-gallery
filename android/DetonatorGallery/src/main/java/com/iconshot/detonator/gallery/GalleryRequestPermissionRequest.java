@@ -8,7 +8,6 @@ import android.content.pm.PackageManager;
 import androidx.core.content.ContextCompat;
 
 import com.iconshot.detonator.Detonator;
-import com.iconshot.detonator.helpers.ContextHelper;
 import com.iconshot.detonator.request.Request;
 
 public class GalleryRequestPermissionRequest extends Request {
@@ -18,7 +17,7 @@ public class GalleryRequestPermissionRequest extends Request {
 
     @Override
     public void run() {
-        Context context = ContextHelper.context;
+        Context context = detonator.context;
 
         boolean hasReadPermission = ContextCompat.checkSelfPermission(
                 context, Manifest.permission.READ_EXTERNAL_STORAGE
