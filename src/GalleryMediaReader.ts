@@ -33,15 +33,15 @@ export class GalleryMediaReader {
   }
 
   public async read(): Promise<GalleryMedia[]> {
-    const mediaList: GalleryMedia[] = await Detonator.request({
-      name: "com.iconshot.detonator.gallery.mediareader::read",
-      data: {
+    const mediaList: GalleryMedia[] = await Detonator.request(
+      "com.iconshot.detonator.gallery.mediareader::read",
+      {
         id: this.id,
         limit: this.limit,
         offset: this.offset,
         albumId: this.albumId,
-      },
-    });
+      }
+    ).fetchAndDecode();
 
     this.offset += mediaList.length;
 
@@ -51,9 +51,9 @@ export class GalleryMediaReader {
   public async close(): Promise<void> {
     this.offset = 0;
 
-    await Detonator.request({
-      name: "com.iconshot.detonator.gallery.mediareader::close",
-      data: { id: this.id },
-    });
+    await Detonator.request(
+      "com.iconshot.detonator.gallery.mediareader::close",
+      { id: this.id }
+    ).fetch();
   }
 }

@@ -21,10 +21,10 @@ export class GalleryAlbumReader {
   }
 
   public async read(): Promise<GalleryAlbum[]> {
-    const albumList: GalleryAlbum[] = await Detonator.request({
-      name: "com.iconshot.detonator.gallery.albumreader::read",
-      data: { id: this.id, limit: this.limit, offset: this.offset },
-    });
+    const albumList: GalleryAlbum[] = await Detonator.request(
+      "com.iconshot.detonator.gallery.albumreader::read",
+      { id: this.id, limit: this.limit, offset: this.offset }
+    ).fetchAndDecode();
 
     this.offset += albumList.length;
 
@@ -34,9 +34,9 @@ export class GalleryAlbumReader {
   public async close(): Promise<void> {
     this.offset = 0;
 
-    await Detonator.request({
-      name: "com.iconshot.detonator.gallery.albumreader::close",
-      data: { id: this.id },
-    });
+    await Detonator.request(
+      "com.iconshot.detonator.gallery.albumreader::close",
+      { id: this.id }
+    ).fetch();
   }
 }

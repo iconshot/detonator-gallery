@@ -1,6 +1,6 @@
 {
   "name": "@detonator/gallery",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Gallery module for Detonator.",
   "repository": {
     "type": "git",
@@ -20,8 +20,8 @@
   ],
   "license": "MIT",
   "peerDependencies": {
-    "detonator": "^1.6.5",
-    "untrue": "^5.15.0"
+    "detonator": "^1.10.0",
+    "untrue": "^5.16.2"
   },
   "devDependencies": {
     "typescript": "^5.8.3"
